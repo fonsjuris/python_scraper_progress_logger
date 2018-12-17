@@ -12,10 +12,10 @@ DOMSTOLAR_SCHEDULE_SCRAPER_ID = 5
 HUGTAKASAFN_SCRAPER_ID = 6
 
 
-def start_scraper(scraper_id):
+def start_scraper(scraper_id, run_location):
     scraper_run_id = dal.save('scraper_run',
-             ('scraper_id', 'status_id', 'num_processed_items'),
-             (scraper_id, _SCRAPER_STARTED_STATUS_ID, 0))
+             ('scraper_id', 'status_id', 'num_processed_items', 'run_location'),
+             (scraper_id, _SCRAPER_STARTED_STATUS_ID, 0, run_location))
     return scraper_run_id
 
 
